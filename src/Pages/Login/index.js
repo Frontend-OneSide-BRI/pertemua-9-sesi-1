@@ -20,6 +20,15 @@ function Login() {
   const onSubmit = (event) => {
     //add login to login and set local storage user data
     //see login on layout
+    const checkUser = users.find(
+      (user) => user.email === "test@gmail.com" && user.password === "123"
+    );
+    if (checkUser) {
+      localStorage.setItem("userData", JSON.stringify(checkUser));
+      navigate("/");
+    } else {
+      alert("akun anda salah");
+    }
   };
 
   useEffect(() => {

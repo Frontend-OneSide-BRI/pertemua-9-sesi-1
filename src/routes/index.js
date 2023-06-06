@@ -1,5 +1,5 @@
 import Login from "../Pages/Login";
-
+import Home from "../Pages/home";
 const routes = [
   {
     element: <h1>Security</h1>,
@@ -8,7 +8,7 @@ const routes = [
     access: "admin",
   },
   {
-    element: <h1>hello world</h1>,
+    element: <Home />,
     path: "/",
     layout: true,
     access: "member",
