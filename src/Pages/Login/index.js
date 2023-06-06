@@ -17,6 +17,11 @@ const users = [
 function Login() {
   const navigate = useNavigate();
 
+  const onSubmit = (event) => {
+    //add login to login and set local storage user data
+    //see login on layout
+  };
+
   useEffect(() => {
     if (localStorage.getItem("userData")) {
       navigate("/");
@@ -25,7 +30,7 @@ function Login() {
 
   return (
     <div>
-      <form>
+      <form onSubmit={onSubmit}>
         <input type="email" placeholder="masukan email" />
         <input type="password" placeholder="masukan password" />
         <button>Log in</button>
