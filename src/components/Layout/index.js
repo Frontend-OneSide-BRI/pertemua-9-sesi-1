@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-function index({ children }) {
+function Layout({ children }) {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!localStorage.getItem("userData")) {
+      navigate("/login");
+    }
+  }, [navigate]);
   return (
     <div>
       <h1>Di tambahkan layout</h1>
@@ -9,4 +16,4 @@ function index({ children }) {
   );
 }
 
-export default index;
+export default Layout;

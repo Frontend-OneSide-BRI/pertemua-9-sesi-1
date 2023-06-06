@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+function Member({ children }) {
+    const navigate = useNavigate();
 
-function member() {
-  return (
-    <div>member</div>
-  )
+    useEffect(() => {
+        navigate("/login");
+    }, [navigate]);
+
+  return <div>member{children}</div>;
 }
 
-export default member
+export default Member;

@@ -1,12 +1,15 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-function Admin({ children }) {
+function Public({ children }) {
   const navigate = useNavigate();
+
   useEffect(() => {
-      navigate("/login");
+    if (localStorage.getItem("userData")) {
+      navigate("/");
+    }
   }, [navigate]);
 
-  return <div></div>;
+  return <div>{children}</div>;
 }
 
-export default Admin;
+export default Public;
