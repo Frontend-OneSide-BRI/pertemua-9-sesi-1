@@ -23,7 +23,7 @@ const routes = [
     element: <Login />,
     path: "/login",
     layout: false,
-    access: "member",
+    access: "public",
   },
 ];
 
